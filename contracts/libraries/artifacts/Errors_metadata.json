@@ -1,0 +1,191 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "AlreadyAtMaxFacility",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "AlreadyPurchasedInitialFactory",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CannotDecreaseBelowZero",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CannotDowngradeAFacility",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CantBuyNewFacilityYet",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CantModifyStarterFacility",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CantModifyStarterMiner",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "FacilityAtMaxCapacity",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "FacilityDimensionsInvalid",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "FacilityInadequatePowerOutput",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "GreatDepression",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "IncorrectValue",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidFacilityIndex",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidFee",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidMinerCoordinates",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidMinerIndex",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidPowerOutput",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidReferrer",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "MinerNotInProduction",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "MiningHasntStarted",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NeedToInitializeFacility",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NewFacilityNotInProduction",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NoRewardsPending",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NonExistentFacility",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NonExistentMiner",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "PlayerDoesNotOwnMiner",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "StarterMinerAlreadyAcquired",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "TooPoor",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "WithdrawFailed",
+				"type": "error"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/libraries/Errors.sol": "Errors"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/libraries/Errors.sol": {
+			"keccak256": "0x428bf6951d0a80c47ba1cfb6e7395e0abef9640a880e7928a41ba95543ef0bd5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://70a81dc6285eda14046fa5daaa5a3a88ce59b31e438f4b14aa2770ea5089f554",
+				"dweb:/ipfs/QmUFDmGnKJ4w9fpNT9tp4hpZpNan4tqyX6vceAp9tqbjPN"
+			]
+		}
+	},
+	"version": 1
+}

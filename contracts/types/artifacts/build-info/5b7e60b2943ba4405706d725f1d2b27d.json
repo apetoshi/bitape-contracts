@@ -1,0 +1,280 @@
+{
+	"id": "5b7e60b2943ba4405706d725f1d2b27d",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.26",
+	"solcLongVersion": "0.8.26+commit.8a97fa7a",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/types/Facility.sol": {
+				"content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.19;\n\n/**\n * @dev Current player's facility.\n */\nstruct Facility {\n    uint256 facilityIndex;\n    uint256 maxMiners; // x * y\n    uint256 currMiners;\n    uint256 totalPowerOutput;\n    uint256 currPowerOutput;\n    uint256 x; // number of x quadrants\n    uint256 y; // number of y qudrants\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": true,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"sources": {
+			"contracts/types/Facility.sol": {
+				"ast": {
+					"absolutePath": "contracts/types/Facility.sol",
+					"exportedSymbols": {
+						"Facility": [
+							17
+						]
+					},
+					"id": 18,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".19"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "32:24:0"
+						},
+						{
+							"canonicalName": "Facility",
+							"documentation": {
+								"id": 2,
+								"nodeType": "StructuredDocumentation",
+								"src": "58:42:0",
+								"text": " @dev Current player's facility."
+							},
+							"id": 17,
+							"members": [
+								{
+									"constant": false,
+									"id": 4,
+									"mutability": "mutable",
+									"name": "facilityIndex",
+									"nameLocation": "131:13:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 17,
+									"src": "123:21:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 3,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "123:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 6,
+									"mutability": "mutable",
+									"name": "maxMiners",
+									"nameLocation": "158:9:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 17,
+									"src": "150:17:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 5,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "150:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 8,
+									"mutability": "mutable",
+									"name": "currMiners",
+									"nameLocation": "190:10:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 17,
+									"src": "182:18:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 7,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "182:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 10,
+									"mutability": "mutable",
+									"name": "totalPowerOutput",
+									"nameLocation": "214:16:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 17,
+									"src": "206:24:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 9,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "206:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 12,
+									"mutability": "mutable",
+									"name": "currPowerOutput",
+									"nameLocation": "244:15:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 17,
+									"src": "236:23:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 11,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "236:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 14,
+									"mutability": "mutable",
+									"name": "x",
+									"nameLocation": "273:1:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 17,
+									"src": "265:9:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 13,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "265:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 16,
+									"mutability": "mutable",
+									"name": "y",
+									"nameLocation": "313:1:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 17,
+									"src": "305:9:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 15,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "305:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "Facility",
+							"nameLocation": "108:8:0",
+							"nodeType": "StructDefinition",
+							"scope": 18,
+							"src": "101:240:0",
+							"visibility": "public"
+						}
+					],
+					"src": "32:309:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

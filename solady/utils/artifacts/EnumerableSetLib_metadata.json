@@ -1,0 +1,92 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "ExceedsCapacity",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "IndexOutOfBounds",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "ValueIsZeroSentinel",
+				"type": "error"
+			}
+		],
+		"devdoc": {
+			"author": "Solady (https://github.com/vectorized/solady/blob/main/src/utils/EnumerableSetLib.sol)",
+			"details": "Note: In many applications, the number of elements in an enumerable set is small. This enumerable set implementation avoids storing the length and indices for up to 3 elements. Once the length exceeds 3 for the first time, the length and indices will be initialized. The amortized cost of adding elements is O(1). The AddressSet implementation packs the length with the 0th entry. All enumerable sets except Uint8Set use a pop and swap mechanism to remove elements. This means that the iteration order of elements can change between element removals.",
+			"errors": {
+				"ExceedsCapacity()": [
+					{
+						"details": "Cannot accommodate a new unique value with the capacity."
+					}
+				],
+				"IndexOutOfBounds()": [
+					{
+						"details": "The index must be less than the length."
+					}
+				],
+				"ValueIsZeroSentinel()": [
+					{
+						"details": "The value cannot be the zero sentinel."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {},
+			"stateVariables": {
+				"_ENUMERABLE_ADDRESS_SET_SLOT_SEED": {
+					"details": "The storage layout is given by: ```     mstore(0x04, _ENUMERABLE_ADDRESS_SET_SLOT_SEED)     mstore(0x00, set.slot)     let rootSlot := keccak256(0x00, 0x24)     mstore(0x20, rootSlot)     mstore(0x00, shr(96, shl(96, value)))     let positionSlot := keccak256(0x00, 0x40)     let valueSlot := add(rootSlot, sload(positionSlot))     let valueInStorage := shr(96, sload(valueSlot))     let lazyLength := shr(160, shl(160, sload(rootSlot))) ```"
+				},
+				"_ENUMERABLE_WORD_SET_SLOT_SEED": {
+					"details": "The storage layout is given by: ```     mstore(0x04, _ENUMERABLE_WORD_SET_SLOT_SEED)     mstore(0x00, set.slot)     let rootSlot := keccak256(0x00, 0x24)     mstore(0x20, rootSlot)     mstore(0x00, value)     let positionSlot := keccak256(0x00, 0x40)     let valueSlot := add(rootSlot, sload(positionSlot))     let valueInStorage := sload(valueSlot)     let lazyLength := sload(not(rootSlot)) ```"
+				},
+				"_ZERO_SENTINEL": {
+					"details": "A sentinel value to denote the zero value in storage. No elements can be equal to this value. `uint72(bytes9(keccak256(bytes(\"_ZERO_SENTINEL\"))))`."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"notice": "Library for managing enumerable sets in storage.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"solady/utils/EnumerableSetLib.sol": "EnumerableSetLib"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"solady/utils/EnumerableSetLib.sol": {
+			"keccak256": "0x998c541888983847c29f936d584be9d94c5b9e8855bd418b1adcb3f61c7ff312",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a1091f9e56143d1fbfe351fcb50eac27d32190a581846bd47b61efbf5206e970",
+				"dweb:/ipfs/QmTUAiwkBxG53mAnHGDZZGSU5bT6nvNwuiBQARb82zPd6v"
+			]
+		}
+	},
+	"version": 1
+}

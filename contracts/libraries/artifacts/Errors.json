@@ -1,0 +1,206 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "60556032600b8282823980515f1a607314602657634e487b7160e01b5f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f80fdfea26469706673582212206395e6e48091c9c3c78a30d454bebf7008d9e6c701e885f76491e972f1207b7664736f6c634300081a0033",
+			"opcodes": "PUSH1 0x55 PUSH1 0x32 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x26 JUMPI PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH4 0x95E6E480 SWAP2 0xC9 0xC3 0xC7 DUP11 ADDRESS 0xD4 SLOAD 0xBE 0xBF PUSH17 0x8D9E6C701E885F76491E972F1207B7664 PUSH20 0x6F6C634300081A00330000000000000000000000 ",
+			"sourceMap": "58:1004:0:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;58:1004:0;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"functionDebugData": {},
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "730000000000000000000000000000000000000000301460806040525f80fdfea26469706673582212206395e6e48091c9c3c78a30d454bebf7008d9e6c701e885f76491e972f1207b7664736f6c634300081a0033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH4 0x95E6E480 SWAP2 0xC9 0xC3 0xC7 DUP11 ADDRESS 0xD4 SLOAD 0xBE 0xBF PUSH17 0x8D9E6C701E885F76491E972F1207B7664 PUSH20 0x6F6C634300081A00330000000000000000000000 ",
+			"sourceMap": "58:1004:0:-:0;;;;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "17000",
+				"executionCost": "96",
+				"totalCost": "17096"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "AlreadyAtMaxFacility",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "AlreadyPurchasedInitialFactory",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "CannotDecreaseBelowZero",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "CannotDowngradeAFacility",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "CantBuyNewFacilityYet",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "CantModifyStarterFacility",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "CantModifyStarterMiner",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "FacilityAtMaxCapacity",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "FacilityDimensionsInvalid",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "FacilityInadequatePowerOutput",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "GreatDepression",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "IncorrectValue",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "InvalidFacilityIndex",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "InvalidFee",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "InvalidMinerCoordinates",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "InvalidMinerIndex",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "InvalidPowerOutput",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "InvalidReferrer",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "MinerNotInProduction",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "MiningHasntStarted",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NeedToInitializeFacility",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NewFacilityNotInProduction",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NoRewardsPending",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NonExistentFacility",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "NonExistentMiner",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "PlayerDoesNotOwnMiner",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "StarterMinerAlreadyAcquired",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "TooPoor",
+			"type": "error"
+		},
+		{
+			"inputs": [],
+			"name": "WithdrawFailed",
+			"type": "error"
+		}
+	]
+}

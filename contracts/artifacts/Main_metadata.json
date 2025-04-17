@@ -1,0 +1,2080 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "AlreadyAtMaxFacility",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "AlreadyPurchasedInitialFactory",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CantBuyNewFacilityYet",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CantModifyStarterFacility",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "CantModifyStarterMiner",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "FacilityDimensionsInvalid",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "FacilityInadequatePowerOutput",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "GreatDepression",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "IncorrectValue",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "IndexOutOfBounds",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidFacilityIndex",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidFee",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidMinerCoordinates",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidMinerIndex",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidPowerOutput",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "InvalidReferrer",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "MinerNotInProduction",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "MiningHasntStarted",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NeedToInitializeFacility",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NewFacilityNotInProduction",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NoRewardsPending",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NonExistentFacility",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NonExistentMiner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "OwnableInvalidOwner",
+				"type": "error"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					}
+				],
+				"name": "OwnableUnauthorizedAccount",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "PlayerDoesNotOwnMiner",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "StarterMinerAlreadyAcquired",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "TooPoor",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "WithdrawFailed",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "facilityIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					}
+				],
+				"name": "FacilityBought",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "facilityIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newCost",
+						"type": "uint256"
+					}
+				],
+				"name": "FacilityCostChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "facilityIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "inProduction",
+						"type": "bool"
+					}
+				],
+				"name": "FacilityProductionToggled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					}
+				],
+				"name": "InitialFacilityPurchased",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "minerIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "minerId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "y",
+						"type": "uint256"
+					}
+				],
+				"name": "MinerBought",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "minerIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "newCost",
+						"type": "uint256"
+					}
+				],
+				"name": "MinerCostChanged",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "minerIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "inProduction",
+						"type": "bool"
+					}
+				],
+				"name": "MinerProductionToggled",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "minerIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "MinerSecondaryMarketAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "minerIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "secondHandPrice",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "minerId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "y",
+						"type": "uint256"
+					}
+				],
+				"name": "MinerSold",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "startBlock",
+						"type": "uint256"
+					}
+				],
+				"name": "MiningStarted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "facilityIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "totalPowerOutput",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "inProduction",
+						"type": "bool"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "y",
+						"type": "uint256"
+					}
+				],
+				"name": "NewFacilityAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "minerIndex",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "hashRate",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "powerConsumption",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "inProduction",
+						"type": "bool"
+					}
+				],
+				"name": "NewMinerAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "playerHashrate",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "playerPendingRewards",
+						"type": "uint256"
+					}
+				],
+				"name": "PlayerHashrateDecreased",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "playerHashrate",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "playerPendingRewards",
+						"type": "uint256"
+					}
+				],
+				"name": "PlayerHashrateIncreased",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "rewards",
+						"type": "uint256"
+					}
+				],
+				"name": "RewardsClaimed",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "HALVING_INTERVAL",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "INITIAL_BITAPE_PER_BLOCK",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "REWARDS_PRECISION",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "STARTER_FACILITY_INDEX",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "STARTER_MINER_INDEX",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "acquiredStarterMiner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "maxMiners",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalPowerOutput",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "inProduction",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "y",
+						"type": "uint256"
+					}
+				],
+				"name": "addFacility",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "hashrate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "powerConsumption",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "inProduction",
+						"type": "bool"
+					}
+				],
+				"name": "addMiner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "minerIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "price",
+						"type": "uint256"
+					}
+				],
+				"name": "addSecondaryMarketForMiner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "apetoshi",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "bitape",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "blocksUntilNextHalving",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "burnPct",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "minerIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "y",
+						"type": "uint256"
+					}
+				],
+				"name": "buyMiner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "buyNewFacility",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "facilityIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "newCost",
+						"type": "uint256"
+					}
+				],
+				"name": "changeFacilityCost",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "minerIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "newCost",
+						"type": "uint256"
+					}
+				],
+				"name": "changeMinerCost",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "claimRewards",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "cooldown",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "cumulativeBitapePerHash",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "facilities",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "maxMiners",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalPowerOutput",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "inProduction",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "y",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "facilityCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getBitapePerBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "y",
+						"type": "uint256"
+					}
+				],
+				"name": "getFreeStarterMiner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "startIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "size",
+						"type": "uint256"
+					}
+				],
+				"name": "getPlayerMinersPaginated",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "uint256",
+								"name": "minerIndex",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "id",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "x",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "y",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "hashrate",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "powerConsumption",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "cost",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "inProduction",
+								"type": "bool"
+							}
+						],
+						"internalType": "struct Miner[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "referrer",
+						"type": "address"
+					}
+				],
+				"name": "getReferrals",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "initialFacilityPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "initializedStarterFacility",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "lastFacilityUpgradeTimestamp",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "lastRewardBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "minerSecondHandMarket",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "miners",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "minerIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "y",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "hashrate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "powerConsumption",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "inProduction",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "miningHasStarted",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "ownerToFacility",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "facilityIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "maxMiners",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "currMiners",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "totalPowerOutput",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "currPowerOutput",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "y",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					}
+				],
+				"name": "pendingRewards",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "playerBitapeDebt",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					}
+				],
+				"name": "playerBitapePerBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "playerHashrate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "playerMinersId",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "minerIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "x",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "y",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "hashrate",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "powerConsumption",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "cost",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "inProduction",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "playerMinersOwned",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "_spacer",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "playerOccupiedCoords",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "playerPendingRewards",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "referrer",
+						"type": "address"
+					}
+				],
+				"name": "purchaseInitialFacility",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "referralBonusPaid",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "referralFee",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "referrals",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "referredUsers",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "minerId",
+						"type": "uint256"
+					}
+				],
+				"name": "sellMiner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_apetoshi",
+						"type": "address"
+					}
+				],
+				"name": "setApetoshi",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_bitape",
+						"type": "address"
+					}
+				],
+				"name": "setBitape",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "burn",
+						"type": "uint256"
+					}
+				],
+				"name": "setBurnPct",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_cooldown",
+						"type": "uint256"
+					}
+				],
+				"name": "setCooldown",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_initialPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "setInitialFacilityPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					}
+				],
+				"name": "setReferralFee",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "startBlock",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "player",
+						"type": "address"
+					}
+				],
+				"name": "timeUntilNextFacilityUpgrade",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "facilityIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "inProduction",
+						"type": "bool"
+					}
+				],
+				"name": "toggleFacilityProduction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "minerIndex",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "inProduction",
+						"type": "bool"
+					}
+				],
+				"name": "toggleMinerProduction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "totalHashrate",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "uniqueMinerCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amt",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawBitape",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"errors": {
+				"IndexOutOfBounds()": [
+					{
+						"details": "The index must be less than the length."
+					}
+				],
+				"OwnableInvalidOwner(address)": [
+					{
+						"details": "The owner is not a valid owner account. (eg. `address(0)`)"
+					}
+				],
+				"OwnableUnauthorizedAccount(address)": [
+					{
+						"details": "The caller account is not authorized to perform an operation."
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"addFacility(uint256,uint256,uint256,bool,uint256,uint256)": {
+					"details": "Add new facility to game."
+				},
+				"addMiner(uint256,uint256,uint256,bool)": {
+					"details": "Add new miner to game."
+				},
+				"addSecondaryMarketForMiner(uint256,uint256)": {
+					"details": "Add secondary market for a miner."
+				},
+				"blocksUntilNextHalving()": {
+					"details": "Get blocks till next halvening."
+				},
+				"buyMiner(uint256,uint256,uint256)": {
+					"details": "Purchase new miners using bitape."
+				},
+				"buyNewFacility()": {
+					"details": "Purchase larger or more power output facility. Players must linearly climb the facilities."
+				},
+				"claimRewards()": {
+					"details": "Claim rewards for player."
+				},
+				"getBitapePerBlock()": {
+					"details": "Get the current mining emission rate based on halvings"
+				},
+				"getFreeStarterMiner(uint256,uint256)": {
+					"details": "All new players can redeem 1 free miner. Players are not required to redeem a free miner."
+				},
+				"getPlayerMinersPaginated(address,uint256,uint256)": {
+					"details": "Get all miners for a player."
+				},
+				"getReferrals(address)": {
+					"details": "Get all referred users."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"pendingRewards(address)": {
+					"details": "Get current pending rewards for player."
+				},
+				"playerBitapePerBlock(address)": {
+					"details": "Get current bitape a player mines per block."
+				},
+				"purchaseInitialFacility(address)": {
+					"details": "All new players must purchase an initial facility with ETH. Players can only purchase new facilities after acquiring initial Facility."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+				},
+				"sellMiner(uint256)": {
+					"details": "Sell miners, if there's a secondary market, player will get bitape in return. Players will sell miners in the case they run out of spots in their facility to put new miners."
+				},
+				"timeUntilNextFacilityUpgrade(address)": {
+					"details": "Get next available facility upgrade time."
+				},
+				"toggleFacilityProduction(uint256,bool)": {
+					"details": "Allows or prevents new facilities from being purchased. New facilities cannot be removed, only toggled off from purchased."
+				},
+				"toggleMinerProduction(uint256,bool)": {
+					"details": "Allows or prevents miner from being purchased. Miners cannot be removed, only toggled off from purchased."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"stateVariables": {
+				"HALVING_INTERVAL": {
+					"details": "Halvening every 4,200,000 blocks, roughly 50 days"
+				},
+				"INITIAL_BITAPE_PER_BLOCK": {
+					"details": "Initial bitape per block"
+				},
+				"STARTER_MINER_INDEX": {
+					"details": "start miner and facility index (these will never change since every player starts with same facility)."
+				},
+				"acquiredStarterMiner": {
+					"details": "Tracks if a player has acquired a free miner."
+				},
+				"apetoshi": {
+					"details": "apetoshi fee recipient."
+				},
+				"bitape": {
+					"details": "Bitape token address."
+				},
+				"burnPct": {
+					"details": "Initial burn is 75%."
+				},
+				"cooldown": {
+					"details": "Initial cooldown time is 24H."
+				},
+				"cumulativeBitapePerHash": {
+					"details": "Tracks bitape per single hash."
+				},
+				"facilities": {
+					"details": "Tracks different facilities and its stats."
+				},
+				"facilityCount": {
+					"details": "Total facilities."
+				},
+				"initialFacilityPrice": {
+					"details": "Purchasing initial facility price in ETH."
+				},
+				"initializedStarterFacility": {
+					"details": "Tracks new players initializing in the game."
+				},
+				"lastRewardBlock": {
+					"details": "Tracks last time we updated rewards."
+				},
+				"minerSecondHandMarket": {
+					"details": "Tracks if a there's a secondary market for a certain miner."
+				},
+				"miners": {
+					"details": "Tracks different miners and its stats."
+				},
+				"ownerToFacility": {
+					"details": "Tracks players facility stats."
+				},
+				"playerBitapeDebt": {
+					"details": "Players debt (updated after rewards are updated for a player)."
+				},
+				"playerHashrate": {
+					"details": "Players total hashrate."
+				},
+				"playerMinersId": {
+					"details": "Maps minerId to the actual miner struct"
+				},
+				"playerMinersOwned": {
+					"details": "Tracks how many of each miner a player has. Only tracks Id."
+				},
+				"playerOccupiedCoords": {
+					"details": "Tracks each miners coords for a player"
+				},
+				"playerPendingRewards": {
+					"details": "Players pending rewards."
+				},
+				"referralBonusPaid": {
+					"details": "Track how much each referrer got paid."
+				},
+				"referralFee": {
+					"details": "Initial referral fee is 2.5%."
+				},
+				"referrals": {
+					"details": "Tracks referrals."
+				},
+				"referredUsers": {
+					"details": "Tracks referred users."
+				},
+				"startBlock": {
+					"details": "Mining start block."
+				},
+				"totalHashrate": {
+					"details": "Total network hashrate."
+				},
+				"uniqueMinerCount": {
+					"details": "Total unique miners."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Main.sol": "Main"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8ed324d3920bb545059d66ab97d43e43ee85fd3bd52e03e401f020afb0b120f6",
+				"dweb:/ipfs/QmfEckWLmZkDDcoWrkEvMWhms66xwTLff9DDhegYpvHo1a"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x493033a8d1b176a037b2cc6a04dad01a5c157722049bbecf632ca876224dd4b2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6a708e8a5bdb1011c2c381c9a5cfd8a9a956d7d0a9dc1bd8bcdaf52f76ef2f12",
+				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
+			]
+		},
+		"contracts/Main.sol": {
+			"keccak256": "0x601ef52d50370133e075b757d38296d1c8a4141e6af492918dc78682a99fed7c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f64b145a6c7291e1a1e7d76b30680eabc084fbc517d603e845137cffc838c35f",
+				"dweb:/ipfs/QmeUhJoqHLMdLRhWDrDWit56JUL9zsEWJnBjiDWHa4BLZN"
+			]
+		},
+		"contracts/interfaces/IBitape.sol": {
+			"keccak256": "0xca9e5d3937f8922472e75a989c700c55d6b05eff15a5fc561de7b02c3813a241",
+			"license": "Unlicense",
+			"urls": [
+				"bzz-raw://c4f0ea3e2c9d4de04e2ba55d5be1f48cf15a41624439b7abbe1e101ae237a098",
+				"dweb:/ipfs/QmeQYCbHnvVtLXUErWods7gV28c1fxY1MeXrW3mXj7JWwH"
+			]
+		},
+		"contracts/libraries/Errors.sol": {
+			"keccak256": "0x428bf6951d0a80c47ba1cfb6e7395e0abef9640a880e7928a41ba95543ef0bd5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://70a81dc6285eda14046fa5daaa5a3a88ce59b31e438f4b14aa2770ea5089f554",
+				"dweb:/ipfs/QmUFDmGnKJ4w9fpNT9tp4hpZpNan4tqyX6vceAp9tqbjPN"
+			]
+		},
+		"contracts/libraries/Events.sol": {
+			"keccak256": "0x4959c1267ee90dbfe352cb7f8cd9c3946cdae3919dff3c3a354671d2fdbb5979",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://141da9c82d54c90c945d743e97de1f1f86ad904bd2bdcb138129e13c9ba96e3f",
+				"dweb:/ipfs/QmerHNkhTUgRCfNEnzeDkxPJFwh3xveqpVo9aGZdHvxYZ9"
+			]
+		},
+		"contracts/types/Facility.sol": {
+			"keccak256": "0x9d90f84416fa51d5b6d8d49509169a38cf19c48e4e7dd115bcb2ac6dd817d42f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://50fa1802e0d6af74471942460f637b5ebb6fc3898621bd250ceea82c8e72d5d2",
+				"dweb:/ipfs/QmcMKudgu5NNachMYxs3qfRsdvd4CxuPVagUitPbtGiSc8"
+			]
+		},
+		"contracts/types/Miner.sol": {
+			"keccak256": "0xa0e741f2b6e4229bac749b8d198b55077b52ff815b5eda91735e08f7dfe1d6fd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d6ed713021f211a03a209d03028469721661ecdd666c76814f21bfe50999a4e9",
+				"dweb:/ipfs/QmT3uSarHYXL8XneVfp7hzsUiXDUA1MpQumTaFb5xWkyia"
+			]
+		},
+		"contracts/types/NewFacility.sol": {
+			"keccak256": "0xf12cd7069be1da7d10de7b8edc854a5d916232432556fb2c6aca683c7fc4f679",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f0ba1ffb0aa6c5233fc38ccdaf6403fc24e40ece0f5e9e70baa75dd8a9618a8e",
+				"dweb:/ipfs/QmRTu1rGHf2MQNjSnvRroPPg2Bp18zWmzyuduwrAUnrKfx"
+			]
+		},
+		"solady/utils/EnumerableSetLib.sol": {
+			"keccak256": "0x998c541888983847c29f936d584be9d94c5b9e8855bd418b1adcb3f61c7ff312",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a1091f9e56143d1fbfe351fcb50eac27d32190a581846bd47b61efbf5206e970",
+				"dweb:/ipfs/QmTUAiwkBxG53mAnHGDZZGSU5bT6nvNwuiBQARb82zPd6v"
+			]
+		},
+		"solady/utils/FixedPointMathLib.sol": {
+			"keccak256": "0xb8537ab90641f09952e4f6c259b1a089f9b957ec6e66fc4a6526569720140868",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://00415ef7b3137ce453504370ba2040a78a4553a998227a85d7a97f72757bb217",
+				"dweb:/ipfs/QmeafmkhHex6PvE2gnHFnzGwc6xYMnm23ndQf5S32sbUqf"
+			]
+		}
+	},
+	"version": 1
+}

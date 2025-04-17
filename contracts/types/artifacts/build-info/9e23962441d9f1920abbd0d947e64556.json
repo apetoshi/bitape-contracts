@@ -1,0 +1,307 @@
+{
+	"id": "9e23962441d9f1920abbd0d947e64556",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.26",
+	"solcLongVersion": "0.8.26+commit.8a97fa7a",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/types/Miner.sol": {
+				"content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.19;\n\n/**\n * @dev Miners that can be purchased in the game.\n */\nstruct Miner {\n    uint256 minerIndex;\n    uint256 id;\n    uint256 x;\n    uint256 y;\n    uint256 hashrate;\n    uint256 powerConsumption;\n    uint256 cost;\n    bool inProduction;\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": true,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"sources": {
+			"contracts/types/Miner.sol": {
+				"ast": {
+					"absolutePath": "contracts/types/Miner.sol",
+					"exportedSymbols": {
+						"Miner": [
+							19
+						]
+					},
+					"id": 20,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".19"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "32:24:0"
+						},
+						{
+							"canonicalName": "Miner",
+							"documentation": {
+								"id": 2,
+								"nodeType": "StructuredDocumentation",
+								"src": "58:57:0",
+								"text": " @dev Miners that can be purchased in the game."
+							},
+							"id": 19,
+							"members": [
+								{
+									"constant": false,
+									"id": 4,
+									"mutability": "mutable",
+									"name": "minerIndex",
+									"nameLocation": "143:10:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 19,
+									"src": "135:18:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 3,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "135:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 6,
+									"mutability": "mutable",
+									"name": "id",
+									"nameLocation": "167:2:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 19,
+									"src": "159:10:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 5,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "159:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 8,
+									"mutability": "mutable",
+									"name": "x",
+									"nameLocation": "183:1:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 19,
+									"src": "175:9:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 7,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "175:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 10,
+									"mutability": "mutable",
+									"name": "y",
+									"nameLocation": "198:1:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 19,
+									"src": "190:9:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 9,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "190:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 12,
+									"mutability": "mutable",
+									"name": "hashrate",
+									"nameLocation": "213:8:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 19,
+									"src": "205:16:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 11,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "205:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 14,
+									"mutability": "mutable",
+									"name": "powerConsumption",
+									"nameLocation": "235:16:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 19,
+									"src": "227:24:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 13,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "227:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 16,
+									"mutability": "mutable",
+									"name": "cost",
+									"nameLocation": "265:4:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 19,
+									"src": "257:12:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_uint256",
+										"typeString": "uint256"
+									},
+									"typeName": {
+										"id": 15,
+										"name": "uint256",
+										"nodeType": "ElementaryTypeName",
+										"src": "257:7:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_uint256",
+											"typeString": "uint256"
+										}
+									},
+									"visibility": "internal"
+								},
+								{
+									"constant": false,
+									"id": 18,
+									"mutability": "mutable",
+									"name": "inProduction",
+									"nameLocation": "280:12:0",
+									"nodeType": "VariableDeclaration",
+									"scope": 19,
+									"src": "275:17:0",
+									"stateVariable": false,
+									"storageLocation": "default",
+									"typeDescriptions": {
+										"typeIdentifier": "t_bool",
+										"typeString": "bool"
+									},
+									"typeName": {
+										"id": 17,
+										"name": "bool",
+										"nodeType": "ElementaryTypeName",
+										"src": "275:4:0",
+										"typeDescriptions": {
+											"typeIdentifier": "t_bool",
+											"typeString": "bool"
+										}
+									},
+									"visibility": "internal"
+								}
+							],
+							"name": "Miner",
+							"nameLocation": "123:5:0",
+							"nodeType": "StructDefinition",
+							"scope": 20,
+							"src": "116:179:0",
+							"visibility": "public"
+						}
+					],
+					"src": "32:263:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}

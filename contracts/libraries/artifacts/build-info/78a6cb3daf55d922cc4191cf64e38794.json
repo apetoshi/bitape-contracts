@@ -1,0 +1,1036 @@
+{
+	"id": "78a6cb3daf55d922cc4191cf64e38794",
+	"_format": "hh-sol-build-info-1",
+	"solcVersion": "0.8.26",
+	"solcLongVersion": "0.8.26+commit.8a97fa7a",
+	"input": {
+		"language": "Solidity",
+		"sources": {
+			"contracts/libraries/Errors.sol": {
+				"content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.19;\n\nlibrary Errors {\n    error IncorrectValue();\n    error AlreadyPurchasedInitialFactory();\n    error StarterMinerAlreadyAcquired();\n    error FacilityAtMaxCapacity();\n    error FacilityInadequatePowerOutput();\n    error PlayerDoesNotOwnMiner();\n    error GreatDepression();\n    error MinerNotInProduction();\n    error TooPoor();\n    error NewFacilityNotInProduction();\n    error CannotDowngradeAFacility();\n    error NoRewardsPending();\n    error CannotDecreaseBelowZero();\n    error InvalidMinerCoordinates();\n    error FacilityDimensionsInvalid();\n    error NeedToInitializeFacility();\n    error InvalidReferrer();\n    error NonExistentMiner();\n    error CantModifyStarterMiner();\n    error NonExistentFacility();\n    error CantModifyStarterFacility();\n    error AlreadyAtMaxFacility();\n    error CantBuyNewFacilityYet();\n    error InvalidMinerIndex();\n    error InvalidFacilityIndex();\n    error InvalidFee();\n    error InvalidPowerOutput();\n    error MiningHasntStarted();\n    error WithdrawFailed();\n}"
+			}
+		},
+		"settings": {
+			"optimizer": {
+				"enabled": true,
+				"runs": 200
+			},
+			"outputSelection": {
+				"*": {
+					"": [
+						"ast"
+					],
+					"*": [
+						"abi",
+						"metadata",
+						"devdoc",
+						"userdoc",
+						"storageLayout",
+						"evm.legacyAssembly",
+						"evm.bytecode",
+						"evm.deployedBytecode",
+						"evm.methodIdentifiers",
+						"evm.gasEstimates",
+						"evm.assembly"
+					]
+				}
+			},
+			"remappings": []
+		}
+	},
+	"output": {
+		"contracts": {
+			"contracts/libraries/Errors.sol": {
+				"Errors": {
+					"abi": [
+						{
+							"inputs": [],
+							"name": "AlreadyAtMaxFacility",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "AlreadyPurchasedInitialFactory",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "CannotDecreaseBelowZero",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "CannotDowngradeAFacility",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "CantBuyNewFacilityYet",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "CantModifyStarterFacility",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "CantModifyStarterMiner",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "FacilityAtMaxCapacity",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "FacilityDimensionsInvalid",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "FacilityInadequatePowerOutput",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "GreatDepression",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "IncorrectValue",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "InvalidFacilityIndex",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "InvalidFee",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "InvalidMinerCoordinates",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "InvalidMinerIndex",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "InvalidPowerOutput",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "InvalidReferrer",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "MinerNotInProduction",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "MiningHasntStarted",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "NeedToInitializeFacility",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "NewFacilityNotInProduction",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "NoRewardsPending",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "NonExistentFacility",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "NonExistentMiner",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "PlayerDoesNotOwnMiner",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "StarterMinerAlreadyAcquired",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "TooPoor",
+							"type": "error"
+						},
+						{
+							"inputs": [],
+							"name": "WithdrawFailed",
+							"type": "error"
+						}
+					],
+					"devdoc": {
+						"kind": "dev",
+						"methods": {},
+						"version": 1
+					},
+					"evm": {
+						"assembly": "    /* \"contracts/libraries/Errors.sol\":58:1062  library Errors {... */\n  dataSize(sub_0)\n  dataOffset(sub_0)\n  0x0b\n  dup3\n  dup3\n  dup3\n  codecopy\n  dup1\n  mload\n  0x00\n  byte\n  0x73\n  eq\n  tag_1\n  jumpi\n  mstore(0x00, shl(0xe0, 0x4e487b71))\n  mstore(0x04, 0x00)\n  revert(0x00, 0x24)\ntag_1:\n  mstore(0x00, address)\n  0x73\n  dup2\n  mstore8\n  dup3\n  dup2\n  return\nstop\n\nsub_0: assembly {\n        /* \"contracts/libraries/Errors.sol\":58:1062  library Errors {... */\n      eq(address, deployTimeAddress())\n      mstore(0x40, 0x80)\n      0x00\n      dup1\n      revert\n\n    auxdata: 0xa26469706673582212206395e6e48091c9c3c78a30d454bebf7008d9e6c701e885f76491e972f1207b7664736f6c634300081a0033\n}\n",
+						"bytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"linkReferences": {},
+							"object": "60556032600b8282823980515f1a607314602657634e487b7160e01b5f525f60045260245ffd5b305f52607381538281f3fe730000000000000000000000000000000000000000301460806040525f80fdfea26469706673582212206395e6e48091c9c3c78a30d454bebf7008d9e6c701e885f76491e972f1207b7664736f6c634300081a0033",
+							"opcodes": "PUSH1 0x55 PUSH1 0x32 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH0 BYTE PUSH1 0x73 EQ PUSH1 0x26 JUMPI PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH0 MSTORE PUSH0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH0 REVERT JUMPDEST ADDRESS PUSH0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH4 0x95E6E480 SWAP2 0xC9 0xC3 0xC7 DUP11 ADDRESS 0xD4 SLOAD 0xBE 0xBF PUSH17 0x8D9E6C701E885F76491E972F1207B7664 PUSH20 0x6F6C634300081A00330000000000000000000000 ",
+							"sourceMap": "58:1004:0:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;58:1004:0;;;;;;;;;;;;;;;;;"
+						},
+						"deployedBytecode": {
+							"functionDebugData": {},
+							"generatedSources": [],
+							"immutableReferences": {},
+							"linkReferences": {},
+							"object": "730000000000000000000000000000000000000000301460806040525f80fdfea26469706673582212206395e6e48091c9c3c78a30d454bebf7008d9e6c701e885f76491e972f1207b7664736f6c634300081a0033",
+							"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH4 0x95E6E480 SWAP2 0xC9 0xC3 0xC7 DUP11 ADDRESS 0xD4 SLOAD 0xBE 0xBF PUSH17 0x8D9E6C701E885F76491E972F1207B7664 PUSH20 0x6F6C634300081A00330000000000000000000000 ",
+							"sourceMap": "58:1004:0:-:0;;;;;;;;"
+						},
+						"gasEstimates": {
+							"creation": {
+								"codeDepositCost": "17000",
+								"executionCost": "96",
+								"totalCost": "17096"
+							}
+						},
+						"legacyAssembly": {
+							".code": [
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "PUSH #[$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "PUSH [$]",
+									"source": 0,
+									"value": "0000000000000000000000000000000000000000000000000000000000000000"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "PUSH",
+									"source": 0,
+									"value": "B"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "CODECOPY",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "DUP1",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "MLOAD",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "BYTE",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "PUSH",
+									"source": 0,
+									"value": "73"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "EQ",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "PUSH [tag]",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "JUMPI",
+									"source": 0
+								},
+								{
+									"begin": -1,
+									"end": -1,
+									"name": "PUSH",
+									"source": -1,
+									"value": "4E487B71"
+								},
+								{
+									"begin": -1,
+									"end": -1,
+									"name": "PUSH",
+									"source": -1,
+									"value": "E0"
+								},
+								{
+									"begin": -1,
+									"end": -1,
+									"name": "SHL",
+									"source": -1
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "PUSH",
+									"source": 0,
+									"value": "4"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "PUSH",
+									"source": 0,
+									"value": "24"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "REVERT",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "tag",
+									"source": 0,
+									"value": "1"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "JUMPDEST",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "ADDRESS",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "PUSH",
+									"source": 0,
+									"value": "0"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "MSTORE",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "PUSH",
+									"source": 0,
+									"value": "73"
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "DUP2",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "MSTORE8",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "DUP3",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "DUP2",
+									"source": 0
+								},
+								{
+									"begin": 58,
+									"end": 1062,
+									"name": "RETURN",
+									"source": 0
+								}
+							],
+							".data": {
+								"0": {
+									".auxdata": "a26469706673582212206395e6e48091c9c3c78a30d454bebf7008d9e6c701e885f76491e972f1207b7664736f6c634300081a0033",
+									".code": [
+										{
+											"begin": 58,
+											"end": 1062,
+											"name": "PUSHDEPLOYADDRESS",
+											"source": 0
+										},
+										{
+											"begin": 58,
+											"end": 1062,
+											"name": "ADDRESS",
+											"source": 0
+										},
+										{
+											"begin": 58,
+											"end": 1062,
+											"name": "EQ",
+											"source": 0
+										},
+										{
+											"begin": 58,
+											"end": 1062,
+											"name": "PUSH",
+											"source": 0,
+											"value": "80"
+										},
+										{
+											"begin": 58,
+											"end": 1062,
+											"name": "PUSH",
+											"source": 0,
+											"value": "40"
+										},
+										{
+											"begin": 58,
+											"end": 1062,
+											"name": "MSTORE",
+											"source": 0
+										},
+										{
+											"begin": 58,
+											"end": 1062,
+											"name": "PUSH",
+											"source": 0,
+											"value": "0"
+										},
+										{
+											"begin": 58,
+											"end": 1062,
+											"name": "DUP1",
+											"source": 0
+										},
+										{
+											"begin": 58,
+											"end": 1062,
+											"name": "REVERT",
+											"source": 0
+										}
+									]
+								}
+							},
+							"sourceList": [
+								"contracts/libraries/Errors.sol",
+								"#utility.yul"
+							]
+						},
+						"methodIdentifiers": {}
+					},
+					"metadata": "{\"compiler\":{\"version\":\"0.8.26+commit.8a97fa7a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"AlreadyAtMaxFacility\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"AlreadyPurchasedInitialFactory\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CannotDecreaseBelowZero\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CannotDowngradeAFacility\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CantBuyNewFacilityYet\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CantModifyStarterFacility\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"CantModifyStarterMiner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FacilityAtMaxCapacity\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FacilityDimensionsInvalid\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"FacilityInadequatePowerOutput\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"GreatDepression\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"IncorrectValue\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFacilityIndex\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidFee\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinerCoordinates\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidMinerIndex\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidPowerOutput\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"InvalidReferrer\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"MinerNotInProduction\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"MiningHasntStarted\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NeedToInitializeFacility\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NewFacilityNotInProduction\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NoRewardsPending\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NonExistentFacility\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"NonExistentMiner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"PlayerDoesNotOwnMiner\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"StarterMinerAlreadyAcquired\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"TooPoor\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"WithdrawFailed\",\"type\":\"error\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/libraries/Errors.sol\":\"Errors\"},\"evmVersion\":\"cancun\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"contracts/libraries/Errors.sol\":{\"keccak256\":\"0x428bf6951d0a80c47ba1cfb6e7395e0abef9640a880e7928a41ba95543ef0bd5\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://70a81dc6285eda14046fa5daaa5a3a88ce59b31e438f4b14aa2770ea5089f554\",\"dweb:/ipfs/QmUFDmGnKJ4w9fpNT9tp4hpZpNan4tqyX6vceAp9tqbjPN\"]}},\"version\":1}",
+					"storageLayout": {
+						"storage": [],
+						"types": null
+					},
+					"userdoc": {
+						"kind": "user",
+						"methods": {},
+						"version": 1
+					}
+				}
+			}
+		},
+		"sources": {
+			"contracts/libraries/Errors.sol": {
+				"ast": {
+					"absolutePath": "contracts/libraries/Errors.sol",
+					"exportedSymbols": {
+						"Errors": [
+							60
+						]
+					},
+					"id": 61,
+					"license": "MIT",
+					"nodeType": "SourceUnit",
+					"nodes": [
+						{
+							"id": 1,
+							"literals": [
+								"solidity",
+								"^",
+								"0.8",
+								".19"
+							],
+							"nodeType": "PragmaDirective",
+							"src": "32:24:0"
+						},
+						{
+							"abstract": false,
+							"baseContracts": [],
+							"canonicalName": "Errors",
+							"contractDependencies": [],
+							"contractKind": "library",
+							"fullyImplemented": true,
+							"id": 60,
+							"linearizedBaseContracts": [
+								60
+							],
+							"name": "Errors",
+							"nameLocation": "66:6:0",
+							"nodeType": "ContractDefinition",
+							"nodes": [
+								{
+									"errorSelector": "d2ade556",
+									"id": 3,
+									"name": "IncorrectValue",
+									"nameLocation": "85:14:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 2,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "99:2:0"
+									},
+									"src": "79:23:0"
+								},
+								{
+									"errorSelector": "8fe6f7d8",
+									"id": 5,
+									"name": "AlreadyPurchasedInitialFactory",
+									"nameLocation": "113:30:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 4,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "143:2:0"
+									},
+									"src": "107:39:0"
+								},
+								{
+									"errorSelector": "70e9a55a",
+									"id": 7,
+									"name": "StarterMinerAlreadyAcquired",
+									"nameLocation": "157:27:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 6,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "184:2:0"
+									},
+									"src": "151:36:0"
+								},
+								{
+									"errorSelector": "188f3409",
+									"id": 9,
+									"name": "FacilityAtMaxCapacity",
+									"nameLocation": "198:21:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 8,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "219:2:0"
+									},
+									"src": "192:30:0"
+								},
+								{
+									"errorSelector": "fbfd2f40",
+									"id": 11,
+									"name": "FacilityInadequatePowerOutput",
+									"nameLocation": "233:29:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 10,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "262:2:0"
+									},
+									"src": "227:38:0"
+								},
+								{
+									"errorSelector": "3d9f63cb",
+									"id": 13,
+									"name": "PlayerDoesNotOwnMiner",
+									"nameLocation": "276:21:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 12,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "297:2:0"
+									},
+									"src": "270:30:0"
+								},
+								{
+									"errorSelector": "515d3e81",
+									"id": 15,
+									"name": "GreatDepression",
+									"nameLocation": "311:15:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 14,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "326:2:0"
+									},
+									"src": "305:24:0"
+								},
+								{
+									"errorSelector": "aa8a9b98",
+									"id": 17,
+									"name": "MinerNotInProduction",
+									"nameLocation": "340:20:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 16,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "360:2:0"
+									},
+									"src": "334:29:0"
+								},
+								{
+									"errorSelector": "ff0b21e6",
+									"id": 19,
+									"name": "TooPoor",
+									"nameLocation": "374:7:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 18,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "381:2:0"
+									},
+									"src": "368:16:0"
+								},
+								{
+									"errorSelector": "47cd2fa6",
+									"id": 21,
+									"name": "NewFacilityNotInProduction",
+									"nameLocation": "395:26:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 20,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "421:2:0"
+									},
+									"src": "389:35:0"
+								},
+								{
+									"errorSelector": "599924a9",
+									"id": 23,
+									"name": "CannotDowngradeAFacility",
+									"nameLocation": "435:24:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 22,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "459:2:0"
+									},
+									"src": "429:33:0"
+								},
+								{
+									"errorSelector": "0df723dc",
+									"id": 25,
+									"name": "NoRewardsPending",
+									"nameLocation": "473:16:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 24,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "489:2:0"
+									},
+									"src": "467:25:0"
+								},
+								{
+									"errorSelector": "91ac10da",
+									"id": 27,
+									"name": "CannotDecreaseBelowZero",
+									"nameLocation": "503:23:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 26,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "526:2:0"
+									},
+									"src": "497:32:0"
+								},
+								{
+									"errorSelector": "a800e0ac",
+									"id": 29,
+									"name": "InvalidMinerCoordinates",
+									"nameLocation": "540:23:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 28,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "563:2:0"
+									},
+									"src": "534:32:0"
+								},
+								{
+									"errorSelector": "472ea01c",
+									"id": 31,
+									"name": "FacilityDimensionsInvalid",
+									"nameLocation": "577:25:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 30,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "602:2:0"
+									},
+									"src": "571:34:0"
+								},
+								{
+									"errorSelector": "0c02d44e",
+									"id": 33,
+									"name": "NeedToInitializeFacility",
+									"nameLocation": "616:24:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 32,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "640:2:0"
+									},
+									"src": "610:33:0"
+								},
+								{
+									"errorSelector": "61104228",
+									"id": 35,
+									"name": "InvalidReferrer",
+									"nameLocation": "654:15:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 34,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "669:2:0"
+									},
+									"src": "648:24:0"
+								},
+								{
+									"errorSelector": "3a6c77df",
+									"id": 37,
+									"name": "NonExistentMiner",
+									"nameLocation": "683:16:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 36,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "699:2:0"
+									},
+									"src": "677:25:0"
+								},
+								{
+									"errorSelector": "4705d684",
+									"id": 39,
+									"name": "CantModifyStarterMiner",
+									"nameLocation": "713:22:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 38,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "735:2:0"
+									},
+									"src": "707:31:0"
+								},
+								{
+									"errorSelector": "6cb40908",
+									"id": 41,
+									"name": "NonExistentFacility",
+									"nameLocation": "749:19:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 40,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "768:2:0"
+									},
+									"src": "743:28:0"
+								},
+								{
+									"errorSelector": "f1fa1762",
+									"id": 43,
+									"name": "CantModifyStarterFacility",
+									"nameLocation": "782:25:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 42,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "807:2:0"
+									},
+									"src": "776:34:0"
+								},
+								{
+									"errorSelector": "72932dd3",
+									"id": 45,
+									"name": "AlreadyAtMaxFacility",
+									"nameLocation": "821:20:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 44,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "841:2:0"
+									},
+									"src": "815:29:0"
+								},
+								{
+									"errorSelector": "41fde9ef",
+									"id": 47,
+									"name": "CantBuyNewFacilityYet",
+									"nameLocation": "855:21:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 46,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "876:2:0"
+									},
+									"src": "849:30:0"
+								},
+								{
+									"errorSelector": "3b87f109",
+									"id": 49,
+									"name": "InvalidMinerIndex",
+									"nameLocation": "890:17:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 48,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "907:2:0"
+									},
+									"src": "884:26:0"
+								},
+								{
+									"errorSelector": "edd999f8",
+									"id": 51,
+									"name": "InvalidFacilityIndex",
+									"nameLocation": "921:20:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 50,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "941:2:0"
+									},
+									"src": "915:29:0"
+								},
+								{
+									"errorSelector": "58d620b3",
+									"id": 53,
+									"name": "InvalidFee",
+									"nameLocation": "955:10:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 52,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "965:2:0"
+									},
+									"src": "949:19:0"
+								},
+								{
+									"errorSelector": "d2a50ed0",
+									"id": 55,
+									"name": "InvalidPowerOutput",
+									"nameLocation": "979:18:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 54,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "997:2:0"
+									},
+									"src": "973:27:0"
+								},
+								{
+									"errorSelector": "602fe2ca",
+									"id": 57,
+									"name": "MiningHasntStarted",
+									"nameLocation": "1011:18:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 56,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1029:2:0"
+									},
+									"src": "1005:27:0"
+								},
+								{
+									"errorSelector": "750b219c",
+									"id": 59,
+									"name": "WithdrawFailed",
+									"nameLocation": "1043:14:0",
+									"nodeType": "ErrorDefinition",
+									"parameters": {
+										"id": 58,
+										"nodeType": "ParameterList",
+										"parameters": [],
+										"src": "1057:2:0"
+									},
+									"src": "1037:23:0"
+								}
+							],
+							"scope": 61,
+							"src": "58:1004:0",
+							"usedErrors": [
+								3,
+								5,
+								7,
+								9,
+								11,
+								13,
+								15,
+								17,
+								19,
+								21,
+								23,
+								25,
+								27,
+								29,
+								31,
+								33,
+								35,
+								37,
+								39,
+								41,
+								43,
+								45,
+								47,
+								49,
+								51,
+								53,
+								55,
+								57,
+								59
+							],
+							"usedEvents": []
+						}
+					],
+					"src": "32:1030:0"
+				},
+				"id": 0
+			}
+		}
+	}
+}
